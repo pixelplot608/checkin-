@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CHECKIN PREMIUM GLOBAL UI THEME — Calm • Pastel • Glass • Smooth */
+
+:root {
+  --bg-main: #f3e8e2;
+  --bg-gradient-1: #f7efe9;
+  --bg-gradient-2: #eaded6;
+  --card-bg: rgba(255, 255, 255, 0.55);
+  --card-border: rgba(255, 255, 255, 0.35);
+  --glass-blur: blur(14px);
+  --primary: #a88beb;
+  --secondary: #8ed1c2;
+  --accent: #ffd6a5;
+  --danger: #ff8fa3;
+  --success: #9ad7a5;
+  --text-main: #3b2f2f;
+  --text-soft: #6b5f5f;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 10px 26px rgba(0, 0, 0, 0.12);
+  --transition: all 0.28s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  color: var(--text-main);
+  background: linear-gradient(140deg, var(--bg-gradient-1), var(--bg-gradient-2));
+  background-attachment: fixed;
+}
+
+#root,
+.app,
+.layout {
+  background: transparent !important;
+}
+
+/* Global spacing & layout */
+.main-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 22px 60px;
+}
+
+.section {
+  margin-bottom: 26px;
+}
+
+/* Glass card — premium */
+.card,
+.glass,
+.panel,
+.box,
+.container {
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 18px 20px;
+  transition: var(--transition);
+}
+
+.card:hover,
+.glass:hover,
+.panel:hover,
+.box:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* Buttons */
+button,
+.btn {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-soft);
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.primary-btn {
+  background: var(--primary);
+}
+
+.soft-btn {
+  background: var(--secondary);
+  color: white;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 10px 12px;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(168, 139, 235, 0.15);
+}
+
+/* Header / topbar */
+header,
+.topbar {
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--card-border);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Stat cards */
+.stat-card {
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Pills / tags */
+.pill,
+.tag {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(168, 139, 235, 0.15);
+  color: var(--text-main);
+  font-size: 13px;
+}
+
+/* Fade-in */
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow hover */
+.glow:hover {
+  box-shadow: 0 0 14px rgba(168, 139, 235, 0.45);
+}
+
+/* Progress bar */
+.progress {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  transition: width 0.5s ease;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  box-shadow: var(--shadow-hover);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Dashboard explore grid */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.explore-card {
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--card-bg);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.explore-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Text hierarchy */
+h1,
+h2 {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: var(--text-main);
+}
+
+.subtitle {
+  color: var(--text-soft);
+  font-size: 14px;
+}
+
+/* Calm transitions */
+.card,
+.panel,
+.box,
+.theme-card,
+.explore-card,
+button {
+  transition: var(--transition);
+}
+
+/* Mood buttons */
+.mood-btn {
+  border-radius: 999px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+}
+
+.mood-btn:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.brand-title {
+  font-weight: 600;
+  font-size: 20px;
+  background: linear-gradient(90deg, var(--secondary), #60A5FA, var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Theme card (app-specific) */
+.theme-card {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.theme-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.theme-btn {
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.theme-btn:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.theme-input {
+  transition: var(--transition);
+}
+
+.theme-heading {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.card-soft {
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+.card-soft:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Soft page fade-in for main views */
+@keyframes page-soft-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-soft-fade-in {
+  animation: page-soft-fade-in 0.35s ease-out;
+}
+
+/* MindPal Tom companion avatar animations */
+@keyframes tom-breathing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes tom-glow {
+  0% {
+    box-shadow: 0 0 0 rgba(129, 140, 248, 0.0);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(129, 140, 248, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(129, 140, 248, 0.0);
+  }
+}
+
+@keyframes tom-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes tom-talk {
+  0%,
+  100% {
+    transform: scaleY(0.8);
+  }
+  50% {
+    transform: scaleY(1.3);
+  }
+}
+
+.tom-avatar {
+  animation: tom-breathing 6s ease-in-out infinite;
+}
+
+.tom-avatar-speaking {
+  animation: tom-breathing 3s ease-in-out infinite, tom-glow 1.8s ease-in-out infinite;
+}
+
+.tom-eye {
+  animation: tom-blink 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.tom-mouth-speaking {
+  animation: tom-talk 0.22s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Calm ripple for Rain Ripple game */
+@keyframes ripple-grow-fade {
+  from {
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0.9;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0;
+  }
+}
+
+.ripple-circle {
+  width: 70px;
+  height: 70px;
+  transform: translate(-50%, -50%) scale(0.2);
+  animation: ripple-grow-fade 0.9s ease-out forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card,
+  .panel,
+  .glass {
+    border-radius: 14px;
+  }
+
+  button,
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
